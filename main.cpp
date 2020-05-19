@@ -7,7 +7,7 @@ int main() {
 
 	int compras;
 	float ticket;
-	cout << "Quantas compras o cliente fez no último ano? ";
+	cout << "\nQuantas compras o cliente fez no último ano? ";
 	cin >> compras;
 	cout << "Qual o ticket médio? ";
 	cin >> ticket;
@@ -19,5 +19,22 @@ int main() {
 	cout << "A maioria das compras foi em dinheiro, cartão ou boleto (D/C/B)? ";
 	cin >> forma;
 
-	
+	int score;
+	if(compras == 0) score = 0;
+	else if(compras <= 2 && compras * ticket <= 3000) score = 20;
+	else if(compras > 2 && compras * ticket <= 3000) score = 40;
+	else score = 60;
+	cout << "\nScore do volume de compras: " << score << " pontos\n";
+
+	int scoreInadimplencia;
+	int scoreForma;
+	if(atrasos > 1 || compras == 0) scoreInadimplencia = 0;
+	else if(atrasos == 1) scoreInadimplencia = 15;
+	else if(atrasos == 0 && compras > 0) scoreInadimplencia = 30;
+
+	if(forma == 'D') scoreForma = 5;
+	else  scoreForma = 10;
+
+	cout << "Score de inadimplência: " << scoreInadimplencia << " pontos \n";
+	cout << "Score de forma de pagamento: " << scoreForma << " pontos \n";
 }
