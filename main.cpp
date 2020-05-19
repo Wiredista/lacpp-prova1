@@ -24,7 +24,7 @@ int main() {
 	else if(compras <= 2 && compras * ticket <= 3000) score = 20;
 	else if(compras > 2 && compras * ticket <= 3000) score = 40;
 	else score = 60;
-	cout << "\nScore do volume de compras: " << score << " pontos\n";
+	cout << "\nScore do volume de compras: " << score << " pontos\n\n";
 
 	int scoreInadimplencia;
 	int scoreForma;
@@ -37,4 +37,12 @@ int main() {
 
 	cout << "Score de inadimplência: " << scoreInadimplencia << " pontos \n";
 	cout << "Score de forma de pagamento: " << scoreForma << " pontos \n";
+
+
+	int scoreTotal = score + scoreInadimplencia + scoreForma;
+	cout << "\nClassificação final: CLIENTE ";
+
+	if(scoreTotal <= 25) cout << "BRONZE\n";
+	else if(scoreTotal <= 75) cout << "PRATA\n";
+	else cout << "OURO\n";
 }
