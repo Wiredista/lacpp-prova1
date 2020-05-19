@@ -11,4 +11,13 @@ int main() {
 	cin >> compras;
 	cout << "Qual o ticket médio? ";
 	cin >> ticket;
+
+	int atrasos;
+	char forma;
+	cout << "\nQuantas vezes o cliente atrasou o pagamento? ";
+	cin >> atrasos;
+	cout << "A maioria das compras foi em dinheiro, cartão ou boleto (D/C/B)? ";
+	cin >> forma;
+
+	
 }
